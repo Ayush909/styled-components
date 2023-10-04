@@ -1,4 +1,4 @@
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import StyledButton, {
   FancyButton,
   SubmitButton,
@@ -17,9 +17,16 @@ const theme = {
   },
 };
 
+const GlobalStyles = createGlobalStyle`
+  button {
+    font-family: 'Roboto';
+  }
+`;
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <h1>Vite + React</h1>
       <div className="card">
         {/* <button>Button</button> */}

@@ -12,9 +12,27 @@ export const StyledButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   transition: 0.5s all ease-out;
+
+  &:hover {
+    background-color: ${(props) =>
+      props.variant !== "outline" ? "#fff" : "#4caf50"};
+    color: ${(props) => (props.variant !== "outline" ? "#4caf50" : " #fff")};
+  }
 `;
 
 export const FancyButton = styled(StyledButton)`
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
   border: none;
+`;
+
+export const SubmitButton = styled(StyledButton).attrs({
+  type: "submit",
+})`
+  box-shadow: 0 9px #999;
+  &:active {
+    background-color: ${(props) =>
+      props.variant !== "outline" ? "#4caf50" : " #fff"};
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 `;

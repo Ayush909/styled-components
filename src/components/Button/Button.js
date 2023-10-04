@@ -1,4 +1,4 @@
-import { StyledButton, FancyButton } from "./Button.styles.js";
+import { StyledButton, FancyButton, SubmitButton } from "./Button.styles.js";
 
 export default StyledButton;
-export { FancyButton };
+export { FancyButton, SubmitButton };

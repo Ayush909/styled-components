@@ -1,4 +1,7 @@
-import StyledButton, { FancyButton } from "./components/Button/Button.js";
+import StyledButton, {
+  FancyButton,
+  SubmitButton,
+} from "./components/Button/Button.js";
 import "./App.css";
 
 function App() {
@@ -7,7 +10,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         {/* <button>Button</button> */}
-        <StyledButton>Styled Button</StyledButton>
+        <StyledButton type="submit">Styled Button</StyledButton>
         <div>
           <br />
         </div>
@@ -16,6 +19,10 @@ function App() {
           <br />
         </div>
         <FancyButton as="a">Fancy Button</FancyButton>
+        <div>
+          <br />
+        </div>
+        <SubmitButton>Submit Button</SubmitButton>
       </div>
     </>
   );

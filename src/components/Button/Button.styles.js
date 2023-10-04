@@ -36,3 +36,9 @@ export const SubmitButton = styled(StyledButton).attrs({
     transform: translateY(4px);
   }
 `;
+
+export const DarkButton = styled(StyledButton)`
+  color: ${(props) => props.theme.dark.text};
+  background-color: ${(props) => props.theme.dark.primary};
+  border: none;
+`;

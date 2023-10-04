@@ -1,4 +1,4 @@
-import StyledButton from "./components/Button/Button.js";
+import StyledButton, { FancyButton } from "./components/Button/Button.js";
 import "./App.css";
 
 function App() {
@@ -8,7 +8,14 @@ function App() {
       <div className="card">
         {/* <button>Button</button> */}
         <StyledButton>Styled Button</StyledButton>
+        <div>
+          <br />
+        </div>
         <StyledButton variant="outline">Styled Button</StyledButton>
+        <div>
+          <br />
+        </div>
+        <FancyButton as="a">Fancy Button</FancyButton>
       </div>
     </>
   );

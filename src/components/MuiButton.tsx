@@ -1,7 +1,23 @@
-import React from "react";
-import { Button, Stack, ButtonGroup } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Button,
+  Stack,
+  ButtonGroup,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "@mui/material";
 
 export const MuiButton = () => {
+  const [formats, setFormats] = useState<string[]>([]);
+
+  console.log(formats);
+
+  const handleFormatChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newFormats: string[]
+  ) => {
+    setFormats(newFormats);
+  };
   return (
     <Stack spacing={4}>
       <Stack spacing={2} direction="row">
@@ -42,11 +58,25 @@ export const MuiButton = () => {
           variant="contained"
           color="secondary"
           orientation="vertical"
+          aria-label="alignment button group"
         >
           <Button>Left</Button>
           <Button>Center</Button>
           <Button>Right</Button>
         </ButtonGroup>
+      </Stack>
+
+      <Stack direction="row">
+        <ToggleButtonGroup
+          value={formats}
+          onChange={handleFormatChange}
+          aria-label="text formatting"
+          color="primary"
+        >
+          <ToggleButton value="bold">Bold</ToggleButton>
+          <ToggleButton value="italic">Italic</ToggleButton>
+          <ToggleButton value="underlined">Underlined</ToggleButton>
+        </ToggleButtonGroup>
       </Stack>
     </Stack>
   );

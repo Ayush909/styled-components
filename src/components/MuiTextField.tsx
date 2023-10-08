@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, TextField } from "@mui/material";
+import { InputAdornment, Stack, TextField } from "@mui/material";
 
 const MuiTextField = () => {
   return (
@@ -21,8 +21,25 @@ const MuiTextField = () => {
           color="secondary"
           size="small"
           helperText="Do not share your password"
+          error
         />
         <TextField label="Password" type="password" size="small" disabled />
+
+        <TextField label="Read Only" InputProps={{ readOnly: true }} />
+      </Stack>
+      <Stack direction="row" spacing={2}>
+        <TextField
+          label="Amount"
+          InputProps={{
+            startAdornment: <InputAdornment position="start">$</InputAdornment>,
+          }}
+        />
+        <TextField
+          label="Weight"
+          InputProps={{
+            endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
+          }}
+        />
       </Stack>
     </Stack>
   );
